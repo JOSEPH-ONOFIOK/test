@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #843E0A 0%, #1E0E02 100%);
+      font-family: 'Irish Grover', sans-serif;
+      height: 1650px;
+    }
+    @media (max-width: 480px){
+        body{
+            height: 1450px;
+        }
+    }
+  
+    .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.button {
+  width: 80%; /* Adjusted width to be responsive */
+  max-width: 580px;
+  height: 60px;
+  padding: 8px 16px;
+  background: linear-gradient(114deg, #843E0A 0%, #1E0E02 100%);
+  border: 3px solid white;
+  color: white;
+  font-size: 16px;
+  font-family: 'Irish Grover', sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* Center the button horizontally */
+  top: 60vh; /* Adjust this value to change the vertical position */
+}
+
+@media (max-width: 768px) {
+  .button {
+    width: 90%;
+    max-width: 400px;
+    height: 50px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .button {
+    width: 95%;
+    max-width: 300px;
+    height: 50px;
+    font-size: 12px;
+    top: 50vh; /* Adjust this value to change the vertical position for smaller screens */
+  }
+}
+
+    .container {
+      width: 100%;
+      height: 600px;
+      position: relative;
+      margin: 0 auto;
+    }
+    .top-bar {
+      width: 95%;
+      position: absolute;
+      top: 10px;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      gap: 10px;
+      z-index: 1000;
+    }
+    @media (max-width: 768px){
+      .top-bar {
+        width: 95%;
+      }
+    }
+    @media (max-width: 480px){
+      .top-bar {
+        width: 100%;
+      }
+    }
+    .icon-link img, .music-icon img {
+      width: 32px;
+      height: 32px;
+      text-decoration: none;
+      z-index: 1000;
+    }
+
+    
+    
+    .animated-lines {
+      position: absolute;
+      width: 100%;
+      height: 500px; /* Adjusted height for more lines */
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      background: transparent;
+    }
+    .line {
+      position: absolute;
+      width: 10%;
+      height: 2px;
+      background: white;
+      animation: moveLines 0.5s linear infinite;
+    }
+    .line:nth-child(odd) {
+      animation-duration: 0.75s;
+    }
+    .line:nth-child(even) {
+      animation-duration: 0.5s;
+    }
+    @keyframes moveLines {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(100%);
+      }
+    }
+    @keyframes scrollNews {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.horses {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  background: transparent;
+  top: 500px;
+  margin-bottom: 0px;
+}
+
+.horses-wrapper {
+  display: flex;
+  width: 200%; /* Double the width to allow for smooth scrolling */
+  animation: scrollNews 20s linear infinite;
+}
+
+.horses img {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  object-fit: cover;
+  margin-right: 100px; /* Space between images */
+}
+
+    
+
+   
+    .header-gif-container {
+      position: absolute;
+      top: 35%;
+      width: 100%;
+      height: 60px; /* Adjust height as needed */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10; /* Ensures it's on top of animated lines */
+      background: transparent;
+    }
+    .header-gif-container img {
+      height: auto;
+      width: 30%;
+      margin-top: -100px;
+    }
+    .header-gif-container h1 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+      margin: 0;
+      font-size: 170px;
+      z-index: -1; /* Ensures the header is above the GIF */
+      margin-top: -240px;
+    }
+    .header-gif-container p {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      text-align: center;
+      color: white;
+      margin: 0;
+      font-size: 24px;
+      z-index: -1; /* Ensures the header is above the GIF */
+      margin-top: 100px;
+    }
+    @media (max-width: 480px){
+        .header-gif-container h1{
+            font-size: 100px;
+        }
+        .header-gif-container img{
+            width: 75%;
+            margin-top: -160px;
+        } 
+        .header-gif-container p{
+          margin-top: 50px;
+        }
+        .header-gif-container{
+          top: 40%;
+        }
+
+    }
+    @media (max-width: 1024px) {
+      .container {
+        max-width: 380px;
+      }
+    }
+    @media (max-width: 768px) {
+      .container {
+        max-width: 320px;
+      }
+    }
+    @media (max-width: 480px) {
+      .container {
+        max-width: 280px;
+      }
+    }
+
+   
+footer {
+  position: relative;
+  margin-top: 75px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+  </style>
+</head>
+<body>
+  <section class="head">
+  <div class="container">
+    <div class="top-bar">
+        <audio id="myAudio" preload="auto">
+            <source src="Retarded Running Horse (Original) (1).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          
+          <div class="music-icon" id="musicIcon">
+            <img id="musicIcon" src="music.png" alt="Music Icon" onclick="toggleMusic()">
+            
+          </div>
+          
+      <div class="icon-links">
+        <a class="icon-link" href="https://t.me/TURBOONSOL0" target="_blank">
+          <img src="telegram.png" alt="Icon 1">
+        </a>
+        <a class="icon-link" href="https://x.com/turbosol__?s=21" target="_blank">
+          <img src="x.png" alt="Icon 2">
+        </a>
+        <a class="icon-link" href="" target="_blank">
+          <img src="dex.png" alt="Icon 3">
+        </a>
+      </div>
+    </div>
+    <!-- Add your content here -->
+  </div>
+  <div class="animated-lines">
+    <div class="line" style="top: 5px; left: 0%;"></div>
+    <div class="line" style="top: 5px; left: 20%;"></div>
+    <div class="line" style="top: 5px; left: 40%;"></div>
+    <div class="line" style="top: 5px; left: 60%;"></div>
+    <div class="line" style="top: 5px; left: 80%;"></div>
+
+    <div class="line" style="top: 45px; left: 10%;"></div>
+    <div class="line" style="top: 45px; left: 30%;"></div>
+    <div class="line" style="top: 45px; left: 50%;"></div>
+    <div class="line" style="top: 45px; left: 70%;"></div>
+    <div class="line" style="top: 45px; left: 90%;"></div>
+
+    <div class="line" style="top: 85px; left: 0%;"></div>
+    <div class="line" style="top: 85px; left: 25%;"></div>
+    <div class="line" style="top: 85px; left: 50%;"></div>
+    <div class="line" style="top: 85px; left: 75%;"></div>
+
+    <div class="line" style="top: 125px; left: 10%;"></div>
+    <div class="line" style="top: 125px; left: 35%;"></div>
+    <div class="line" style="top: 125px; left: 60%;"></div>
+    <div class="line" style="top: 125px; left: 85%;"></div>
+
+    <div class="line" style="top: 165px; left: 5%;"></div>
+    <div class="line" style="top: 165px; left: 30%;"></div>
+    <div class="line" style="top: 165px; left: 55%;"></div>
+    <div class="line" style="top: 165px; left: 80%;"></div>
+
+    <div class="line" style="top: 205px; left: 0%;"></div>
+    <div class="line" style="top: 205px; left: 20%;"></div>
+    <div class="line" style="top: 205px; left: 40%;"></div>
+    <div class="line" style="top: 205px; left: 60%;"></div>
+    <div class="line" style="top: 205px; left: 80%;"></div>
+
+    <div class="line" style="top: 245px; left: 10%;"></div>
+    <div class="line" style="top: 245px; left: 30%;"></div>
+    <div class="line" style="top: 245px; left: 50%;"></div>
+    <div class="line" style="top: 245px; left: 70%;"></div>
+    <div class="line" style="top: 245px; left: 90%;"></div>
+
+    <div class="line" style="top: 285px; left: 5%;"></div>
+    <div class="line" style="top: 285px; left: 25%;"></div>
+    <div class="line" style="top: 285px; left: 45%;"></div>
+    <div class="line" style="top: 285px; left: 65%;"></div>
+    <div class="line" style="top: 285px; left: 85%;"></div>
+
+    <div class="line" style="top: 325px; left: 10%;"></div>
+    <div class="line" style="top: 325px; left: 30%;"></div>
+    <div class="line" style="top: 325px; left: 50%;"></div>
+    <div class="line" style="top: 325px; left: 70%;"></div>
+    <div class="line" style="top: 325px; left: 90%;"></div>
+
+    <div class="line" style="top: 365px; left: 0%;"></div>
+    <div class="line" style="top: 365px; left: 25%;"></div>
+    <div class="line" style="top: 365px; left: 50%;"></div>
+    <div class="line" style="top: 365px; left: 75%;"></div>
+    <button class="button">
+        BUY HERE
+      </button>
+  </div>
+  <div class="header-gif-container">
+    <img src="hor2.gif" alt="Header GIF">
+    <h1>$TURBO</h1>
+    <p>I fast, I have spare leg</p>
+  </div>
+  
+  <div class="horses">
+    <div class="horses-wrapper">
+      <img src="1.png" alt="News 1">
+      <img src="2.png" alt="News 2">
+      <img src="3.png" alt="News 3">
+      <img src="4.png" alt="News 4">
+      <img src="5.png" alt="News 5">
+      <img src="6.png" alt="News 6">
+      <img src="7.png" alt="News 7">
+
+      <img src="1.png" alt="News 1">
+      <img src="2.png" alt="News 2">
+      <img src="3.png" alt="News 3">
+      <img src="4.png" alt="News 4">
+      <img src="5.png" alt="News 5">
+      <img src="6.png" alt="News 6">
+      <img src="7.png" alt="News 7">
+    </div>
+  </div>
+  
+      <footer> All Right Reserved $TURBO 2024</footer>  
+    
+  
+</section>
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script>
+    function toggleMusic() {
+      var audio = document.getElementById("myAudio");
+      var icon = document.getElementById("musicIcon");
+
+      if (audio.paused) {
+        audio.play().then(() => {
+          icon.src = "music.png"; // Change icon to pause state
+          console.log("Audio is playing");
+        }).catch((error) => {
+          console.error("Failed to play audio:", error);
+        });
+      } else {
+        audio.pause();
+        icon.src = "musicoff.png"; // Change icon to play state
+        console.log("Audio is paused");
+      }
+    }
+  </script>
+  
+  
+</body>
+</html>
